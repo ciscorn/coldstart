@@ -48,6 +48,6 @@ sns.violinplot(x="Image", y="Latency", hue="Service", data=df, dodge=True, ax=ax
 plt.grid()
 plt.xlabel("")
 plt.ylabel("Latency [sec]")
+plt.ylim(0, 2)
 plt.tight_layout()
 plt.show()
-
