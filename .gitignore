@@ -1,1 +1,4 @@
 .DS_Store
+urls.json
+__pycache__
+*.jsonl

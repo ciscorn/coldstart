@@ -1,5 +1,1 @@
-
-
-```
-gcloud auth configure-docker asia-northeast1-docker.pkg.dev
-```
+Google Cloud Run と AWS Lambda のコールドスタート時間を言語別に雑に観察したい

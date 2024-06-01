@@ -1,0 +1,16 @@
+{
+    "CLOUD_RUN": {
+        "uvicorn": "https://hello-world-uvicorn-xxxxxxxxx-an.a.run.app",
+        "gunicorn": "https://hello-world-gunicorn-xxxxxxxxx-an.a.run.app",
+        "bun": "https://hello-world-bun-xxxxxxxxx-an.a.run.app",
+        "go": "https://hello-world-go-xxxxxxxxx-an.a.run.app",
+        "rust": "https://hello-world-rust-xxxxxxxxx-an.a.run.app"
+    },
+    "LAMBDA": {
+        "uvicorn": "https://xxxxxxx.lambda-url.ap-northeast-1.on.aws/",
+        "gunicorn": "https://xxxxxxx.lambda-url.ap-northeast-1.on.aws/",
+        "bun": "https://xxxxxxx.lambda-url.ap-northeast-1.on.aws/",
+        "go": "https://xxxxxxx.lambda-url.ap-northeast-1.on.aws/",
+        "rust": "https://xxxxxxx.lambda-url.ap-northeast-1.on.aws/"
+    }
+}
