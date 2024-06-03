@@ -23,7 +23,7 @@ managed = true
 dev-dependencies = []
 
 [tool.rye.scripts]
-devserver = "uvicorn hello:app --workers 1 --port 8080"
+devserver = "gunicorn hello:app --bind 0.0.0.0:8080"
 
 [tool.hatch.metadata]
 allow-direct-references = true

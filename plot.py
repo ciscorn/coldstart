@@ -24,7 +24,7 @@ services = []
 langs = []
 latencies = []
 
-with open("result.jsonl", encoding="utf-8") as f:
+with open("result_512.jsonl", encoding="utf-8") as f:
     for line in f:
         if line := line.strip():
             data = json.loads(line)
@@ -40,14 +40,15 @@ with open("result.jsonl", encoding="utf-8") as f:
 df = pd.DataFrame({"Service": services, "Latency": latencies, "Image": langs})
 
 
-fig = plt.figure()
+fig = plt.figure(figsize=(6, 4))
 ax = fig.add_subplot(1, 1, 1)
 
 sns.violinplot(x="Image", y="Latency", hue="Service", data=df, dodge=True, ax=ax)
 
 plt.grid()
 plt.xlabel("")
-plt.ylabel("Latency [sec]")
-plt.ylim(0, 2)
+plt.ylabel("Response time [sec]")
+plt.ylim(0, 1.7)
+plt.title("Memory: 512MiB")
 plt.tight_layout()
-plt.show()
+plt.savefig("plot_512.png", dpi=300)

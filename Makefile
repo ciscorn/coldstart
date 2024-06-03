@@ -3,6 +3,8 @@ IMAGE_PREFIX = asia-northeast1-docker.pkg.dev/hello-cloud-run-1234/cloud-run-sou
 
 ## gcloud auth configure-docker asia-northeast1-docker.pkg.dev
 
+deploy: deploy-go deploy-bun deploy-rust deploy-gunicorn deploy-uvicorn
+
 
 deploy-go:
 	docker buildx build ./go/ --platform linux/amd64 -t ${IMAGE_PREFIX}-go:latest
@@ -10,7 +12,7 @@ deploy-go:
 	gcloud run deploy hello-world-go \
 		--image=${IMAGE_PREFIX}-go:latest \
 		--region=asia-northeast1 \
-		--memory=128Mi \
+		--memory=512Mi \
 		--allow-unauthenticated
 
 deploy-bun:
@@ -19,7 +21,7 @@ deploy-bun:
 	gcloud run deploy hello-world-bun \
 		--image=${IMAGE_PREFIX}-bun:latest \
 		--region=asia-northeast1 \
-		--memory=128Mi \
+		--memory=512Mi \
 		--allow-unauthenticated
 
 deploy-rust:
@@ -28,7 +30,7 @@ deploy-rust:
 	gcloud run deploy hello-world-rust \
 		--image=${IMAGE_PREFIX}-rust:latest \
 		--region=asia-northeast1 \
-		--memory=128Mi \
+		--memory=512Mi \
 		--allow-unauthenticated
 
 deploy-gunicorn:
@@ -37,7 +39,7 @@ deploy-gunicorn:
 	gcloud run deploy hello-world-gunicorn \
 		--image=${IMAGE_PREFIX}-gunicorn:latest \
 		--region=asia-northeast1 \
-		--memory=128Mi \
+		--memory=512Mi \
 		--allow-unauthenticated
 
 deploy-uvicorn:
@@ -46,5 +48,5 @@ deploy-uvicorn:
 	gcloud run deploy hello-world-uvicorn \
 		--image=${IMAGE_PREFIX}-uvicorn:latest \
 		--region=asia-northeast1 \
-		--memory=128Mi \
+		--memory=512Mi \
 		--allow-unauthenticated

@@ -21,7 +21,7 @@ export class CdkStack extends cdk.Stack {
       code: lambda.DockerImageCode.fromImageAsset(`../${lang}`, {
         platform: ecr_assets.Platform.LINUX_AMD64,
       }),
-      memorySize: 128,
+      memorySize: 512,
     });
 
     // Function URL

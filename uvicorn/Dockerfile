@@ -13,8 +13,8 @@ RUN pip install -r requirements.lock
 FROM cgr.dev/chainguard/python:latest
 WORKDIR /app
 
-# # AWS Lambda Web Adapter
-# COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.3 /lambda-adapter /opt/extensions/lambda-adapter
+# AWS Lambda Web Adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.3 /lambda-adapter /opt/extensions/lambda-adapter
  
 COPY --from=builder /app/venv /app/venv
 ENV PATH=/app/venv/bin:$PATH

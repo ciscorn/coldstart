@@ -2,3 +2,4 @@
 urls.json
 __pycache__
 *.jsonl
+*.png
