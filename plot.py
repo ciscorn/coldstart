@@ -12,6 +12,7 @@ LANG_MAP = {
     "uvicorn": "Py Uvicorn",
     "gunicorn": "Py Gunicorn",
     "bun": "Bun",
+    "node": "Node",
 }
 
 SERVICE_MAP = {
@@ -24,7 +25,7 @@ services = []
 langs = []
 latencies = []
 
-with open("result_512.jsonl", encoding="utf-8") as f:
+with open("result_node.jsonl", encoding="utf-8") as f:
     for line in f:
         if line := line.strip():
             data = json.loads(line)
@@ -49,6 +50,6 @@ plt.grid()
 plt.xlabel("")
 plt.ylabel("Response time [sec]")
 plt.ylim(0, 1.7)
-plt.title("Memory: 512MiB")
+plt.title("Memory: 128MiB")
 plt.tight_layout()
-plt.savefig("plot_512.png", dpi=300)
+plt.savefig("plot_node.png", dpi=300)

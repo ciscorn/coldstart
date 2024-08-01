@@ -15,7 +15,7 @@ USER root
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.3 /lambda-adapter /opt/extensions/lambda-adapter
 
 COPY package*.json tsconfig.json ./
-COPY --from=builder /app/src ./src
+COPY --from=builder /app/dist ./dist
 
 RUN [ "npm", "ci", "--omit=dev", "--no-audit", "--loglevel", "verbose" ]
-CMD [ "src/index.js" ]
+CMD [ "dist/index.js" ]
